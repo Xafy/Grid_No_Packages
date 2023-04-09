@@ -1,0 +1,40 @@
+<div class="search-form">
+    <form NgForm  (keyup)="onSearch(text)">
+        <input ngModel name="text" #text type="text">
+    </form>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th *ngFor="let col of columns" class="table-cell" (click)="sortColumn(col)">
+                {{col}} 
+                <span *ngIf="isDescSorting(col)">▼</span>
+                <span *ngIf="isAscSorting(col)">▲</span>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let row of data">
+            <td *ngFor="let cell of columns" class="table-cell">
+                {{row[cell]}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="pagination">
+    <a href="#" (click)="onPrev()">&laquo; prev</a>
+    <a href="#" (click)="onPage(pageNumber)" *ngFor="let page of [].constructor(options.totalPages); let pageNumber = index">{{pageNumber}}</a> 
+    <a href="#" (click)="onNext()">next &raquo;</a>
+</div>
+
+<div class="limit">
+    <select #limit (change)="onLimit(limit)" name="limit" >
+        <option value="10">Select limit</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="90">90</option>
+    </select>
+</div>
