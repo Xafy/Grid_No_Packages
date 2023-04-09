@@ -15,6 +15,10 @@
     float: right;
 }
 
+.search-form input{
+    height: 30px;
+}
+
 .pagination {
     display: block;
     height: 30px;
@@ -33,7 +37,6 @@
 
 .limit select {
     height: 30px;
-    float: right;
     display: block;
     margin: 10px;
 }
