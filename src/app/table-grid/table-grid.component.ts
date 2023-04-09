@@ -73,7 +73,8 @@ export class TableGridComponent implements OnInit {
   }
 
   onPage(page : number){
-    this.options.page = page > 1 ? page : page + 1;
+    this.options.page = page ;
+    console.log(this.options.page)
     this.fetchData();
   }
 
