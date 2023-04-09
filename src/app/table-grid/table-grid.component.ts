@@ -18,6 +18,7 @@ export class TableGridComponent implements OnInit {
     searchValue: "",
     currentPage: 1,
     totalPages: 1,
+    total: 500,
     page : 1,
     limit: 15,
     prev: 1,
@@ -37,6 +38,7 @@ export class TableGridComponent implements OnInit {
       this.options.totalPages = data.totalPages
       this.options.next = data.next
       this.options.prev = data.prev
+      this.options.total = data.total
     })
   }
 
@@ -61,8 +63,12 @@ export class TableGridComponent implements OnInit {
   }
 
   onNext(){
-    this.options.page = this.options.next;
-    console.log(this.options.next)
+    console.log(this.options.next, this.options.totalPages)
+    if (this.options.next === this.options.totalPages){
+      this.options.page = this.options.totalPages - 1;
+    } else {
+      this.options.page = this.options.next;
+    }
     this.fetchData();
   }
 
@@ -80,6 +86,7 @@ export class TableGridComponent implements OnInit {
 
   onLimit(limit: any){
     this.options.limit = limit.value;
+    this.options.page = 0;
     this.fetchData();
   }
 

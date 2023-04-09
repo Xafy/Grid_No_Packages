@@ -5,6 +5,7 @@ export interface OptionsInterface {
     currentPage : number,
     totalPages : number,
     page : number,
+    total : number
     limit: number
     next: number ,
     prev: number
