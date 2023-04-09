@@ -38,7 +38,7 @@ export class TableGridComponent implements OnInit {
       this.options.totalPages = data.totalPages
       this.options.next = data.next
       this.options.prev = data.prev
-      this.options.total = data.total
+      this.options.total = data.totalItems
     })
   }
 

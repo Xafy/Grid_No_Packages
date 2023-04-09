@@ -20,11 +20,15 @@
 }
 
 .pagination {
-    display: block;
+    display: inline;
     height: 30px;
     float: right;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.details{
+    display: inline;
 }
 
 .pagination a {
