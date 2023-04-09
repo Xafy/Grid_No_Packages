@@ -16,7 +16,8 @@
 }
 
 .pagination {
-    display: inline-block;
+    display: block;
+    height: 30px;
     float: right;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -30,7 +31,8 @@
     text-decoration: none;
 }
 
-.limit {
+.limit select {
+    height: 30px;
     float: right;
     display: block;
     margin: 10px;
