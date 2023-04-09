@@ -40,6 +40,6 @@
 
 <div class="pagination">
     <a href="#" (click)="onPrev()">&laquo; prev</a>
-    <a href="#" (click)="onPage(pageNumber)" *ngFor="let page of [].constructor(options.totalPages); let pageNumber = index">{{pageNumber}}</a> 
+    <a href="#" (click)="onPage(pageNumber)" *ngFor="let page of [].constructor(options.totalPages); let pageNumber = index">{{pageNumber+1}}</a> 
     <a href="#" (click)="onNext()">next &raquo;</a>
 </div>
